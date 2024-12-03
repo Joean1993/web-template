@@ -1,0 +1,90 @@
+@use '@/assets/styles/variables.scss' as variables;
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 14px;
+
+	img {
+		margin: 0 auto;
+		width: 130px;
+	}
+}
+
+.body {
+	overflow-y: hidden;
+	height: calc(100vh - variables.$nav-height);
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+}
+
+.header {
+	z-index: 10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: variables.$nav-height;
+	border-bottom: 1px solid variables.$color-border;
+	background-color: variables.$nav-bg-color;
+	padding-inline: variables.$nav-padding-horizontal;
+	line-height: variables.$nav-height;
+}
+
+.content {
+	overflow-y: auto;
+	padding: variables.$content-padding;
+	padding: 0;
+	height: 100%;
+	flex: 1;
+	background-color: #fff;
+}
+
+.sider {
+	overflow-y: auto;
+	background-color: variables.$sider-bg-color !important;
+
+	:global {
+		.ant-menu-root {
+			position: relative;
+			margin-top: 10px;
+			height: calc(100% - variables.$nav-height - 10px);
+			border-right: 0 !important;
+			background-color: variables.$sider-bg-color;
+			overflow-y: scroll;
+
+			.ant-menu-item-group-title {
+				position: sticky;
+				top: 0;
+				background-color: #f5f7fa;
+				z-index: 1;
+			}
+		}
+
+		.ant-menu-item {
+			margin-right: 0;
+			margin-left: 0;
+			width: 148px;
+			height: 46px;
+			font-weight: 500;
+			margin-inline: auto;
+		}
+
+		.ant-menu-item-icon {
+			color: #06f !important;
+		}
+	}
+}
+
+.avatar {
+	cursor: pointer;
+}
+
+.name {
+	color: #fff;
+}
